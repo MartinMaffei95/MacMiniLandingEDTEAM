@@ -1,0 +1,211 @@
+.main-header{
+    --header-border: 1px solid rgba(255,255,255,0.25);
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    z-index: var(--z-sticky);
+    background-color: var(--bg-color-alt);
+}
+
+.main-header .nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .tittle{
+    color: var(--text-color);
+    font-weight: var(--semi-bold-font);
+    font-size: var(--normal-body-size);
+    text-decoration: none;
+}
+
+.main-menu{
+    list-style: none;
+    font-size: var(--smaller-body-size);   
+    background-color: var(--bg-color-alt); 
+}
+
+.main-header .link{
+    color: var(--text-color);
+}
+
+.main-header .link:hover{
+    color: var(--accent-color-alt);
+    text-decoration: none;
+}
+
+
+@media screen and (min-width : 734px){
+    .main-header{
+        border-bottom: var(--header-border) ;
+    }
+
+    .main-header .right,
+    .main-menu{
+        gap:1.5rem;
+    }
+
+    .main-menu{
+        display: flex;
+    }
+
+    .menu-button{
+        display: none;
+    }
+}
+
+@media screen and (max-width : 1024px){
+    .main-header .nav{
+        max-width: calc(100% - 3rem);
+    }
+}
+
+
+/* ----------- Estilos Movil ----------*/
+
+@media screen and (max-width : 734px){
+
+    .main-header{
+        --transition-menu: 0.5s;
+    }
+
+    .main-header .nav{
+        max-width: calc(100% - 2rem);
+        /* background-color: red; */
+    }
+
+    .main-header .right{
+        gap: 0.75rem;
+    }
+
+    .main-menu{
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        padding: 0.25rem 2.5rem 1.5rem;
+        width: 100%;
+        border-bottom: var(--header-border);
+        
+
+        /* Animacion */
+        transform: translateY(-100%);
+        z-index: var(--z-negative);
+        transition: transform var(--transition-menu) var(--transition-menu);
+        overflow: hidden;
+    }
+
+    .main-menu .item{
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform var(--transition-menu), opacity var(--transition-menu);
+    }
+
+    .main-menu .item:first-of-type{
+        transition-delay: 70ms;
+    }
+
+    .main-menu .item:nth-of-type(2){
+        transition-delay: 140ms;
+    }
+
+    .main-menu .item:nth-of-type(3){
+        transition-delay: 210ms;
+    }
+    
+    .main-menu .item:not(:last-of-type){
+        border-bottom: var(--header-border);
+    }
+
+    .main-menu .link{
+        display: block;
+        padding-block: 0.85rem;
+        opacity: 0.9;
+    }
+
+    .main-header .menu-button{
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        opacity: 0.8;
+    }
+
+    .main-header .menu-button:hover{
+        opacity: 1;
+    }
+
+    .main-header .menu-button::before,
+    .main-header .menu-button::after{
+        content: '';
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 0.75rem;
+        background-color: #fff;
+        transition: transform 1s cubic-bezier(0.86,0,0.07,1);
+
+    }
+
+    .main-header .menu-button::before{
+        left: 45%;
+        transform: rotate(-40deg);
+    }
+
+    .main-header .menu-button::after{
+        right: 45%;
+        transform: rotate(40deg);
+    }
+
+
+    .main-overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        /* transition: opacity 1s 0.1s; */
+        z-index: var(--z-normal);
+    }
+
+    /*------ Menu Activo --------*/
+    .main-header.is-active .main-menu{
+        transform: initial;
+        transition-delay: 0s;
+    }
+
+    .main-header.is-active .main-menu .item{
+        opacity: initial;
+        transform:initial ;
+    }
+
+    .main-header.is-active .main-menu .item:first-of-type{
+        transition-delay: 560ms;
+    }
+
+    .main-header.is-active .main-menu .item:nth-of-type(2){
+        transition-delay: 490ms;
+    }
+
+    .main-header.is-active .main-menu .item:nth-of-type(3){
+        transition-delay: 420ms;
+    }
+
+    .main-header.is-active ~ .main-overlay {
+        opacity: 1;
+        pointer-events: initial;
+    }
+    
+    .main-header.is-active .menu-button::before{
+        transform:rotate(40deg) ;
+    }
+
+    .main-header.is-active .menu-button::after{
+        transform:rotate(-40deg) ;
+    }
+}
+
+/*~*/
