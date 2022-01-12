@@ -83,7 +83,7 @@
         --smaller-body-size     :1rem;      /*16px*/
         --normal-body-size      :1.25rem;   /*20px*/
         --big-body-size         :1.75rem;   /*28px*/
-        --bigger-body-size      :1rem;      /*32px*/
+        --bigger-body-size      :2rem;      /*32px*/
 
         /*Tittle font size*/
         --small-tittle-size     :3rem;      /*48px*/
@@ -104,4 +104,32 @@ h1,h2,h3,h4,h5,h6{
 
 .body-font{
     font-family: var(--body-font);
+}
+
+.big-title{
+    font-size: var(--bigger-tittle-size);
+    font-weight: var(--bold-font);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.75rem;
+}
+
+.big-description{
+    max-width: var(--large-max-width);
+    color: var(--text-color-alt);
+    font-family: var(--display-font);
+    font-size: var(--big-body-size);
+    font-weight: var(--medium-font);
+    line-height: var(--tittle-line-height);
+}
+
+@media screen and (min-width : 734px){
+    .big-description{
+        max-width: var(--large-max-width);
+    }
+}
+
+@media screen and (min-width : 1024px){
+    .big-description{
+        max-width: var(--small-max-width);
+    }
 }

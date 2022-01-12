@@ -7,7 +7,12 @@
 .container{
     margin-inline:auto;
     width: 87.5%;
-    max-width: calc(17.5px + 4rem);
+    /* max-width: calc(17.5rem + 4rem); */
+}
+
+.center-x{
+    left: 50%;
+    transform: translateX(-50%) ;
 }
 
 @media screen and (min-width : 734px){
