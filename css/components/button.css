@@ -16,3 +16,9 @@
     padding: 0.25rem 0.5rem;
     font-size: var(--smaller-body-size);
 }
+
+.button.ghost{
+    border: 2px solid white;
+    background: none;
+    font-weight: var(--semi-bold-font) ;
+}

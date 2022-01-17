@@ -1,0 +1,223 @@
+.feature-panel{
+    --padding: 2rem;
+    --max-width:25rem;
+    position: relative;
+    overflow: hidden;
+    padding: var(--padding);
+}
+
+/* .feature-panel .content{
+    padding: var(--padding);
+} */
+
+.feature-panel .title{
+    font-size: var(--normal-body-size);
+    margin-bottom: 1.5rem;
+}
+
+.feature-panel .subtitle{
+    font-weight :var(--bold-font);
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.feature-panel .description{
+    margin-bottom: 2rem;
+    font-family: var(--display-font);
+    font-weight: var(--semi-bold-font);
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    letter-spacing: 0.012em;
+
+}
+
+.feature-panel .button{
+    padding: 0.75rem 1.25rem;
+}
+
+.feature-panel .image{
+    --width: 90%;
+    width: var(--width);
+    display: block;
+    margin-left:auto ;
+}
+
+
+.feature-panel .characteristic-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+    font-size: 1.25rem;
+    text-align: center;
+    list-style: none;
+}
+
+.feature-panel .characteristic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-panel .number{
+    --size:5rem;
+    font-size: var(--size);
+    font-family: var(--display-font);
+    font-weight: var(--bold-font);
+    line-height: 1;
+}
+
+.feature-panel .number .x{
+    font-size: calc(var(--size) - 2rem);
+}
+
+.feature-panel .caption{
+    font-weight: var(--bold-font);
+}
+
+
+
+
+@media screen and (min-width : 360px){
+    .feature-panel{
+        border-radius:1.25rem;
+    }
+
+    .feature-panel .subtitle{
+        /* font-size: 4rem; */
+    }
+}
+
+@media screen and (min-width : 734px){
+    .feature-panel {
+        --padding:2.5rem;
+    }
+
+
+    .feature-panel .content{
+        box-sizing: content-box;
+        max-width: var(--max-width);
+        padding-right: 0;
+    }
+
+    .feature-panel .title{
+        margin-bottom: var(--bigger-tittle-size);
+    }
+
+    .feature-panel .subtitle{
+        margin-bottom: 1.5rem;
+        font-size: 4rem;
+    }
+
+    .feature-panel .description{
+        margin-bottom: 3.5rem;
+    }
+
+    .feature-panel .button{
+        white-space: nowrap;
+    }
+
+    .feature-panel .image{
+        --width: 32rem;
+        --spacing:4rem;
+        position: absolute;
+        bottom: 0;
+        left: calc(var(--width) + var(--spacing));
+    }
+
+    .feature-panel .break-line{
+        display: none;
+    }
+
+
+    .feature-panel .number{
+        --size: 6rem;
+    }
+
+    .feature-panel .caption.big{
+        font-weight :var(--bold-font);
+        font-size: 4rem;
+        font-family: var(--display-font);
+    }
+
+    .feature-panel .characteristic-container{
+        align-content: space-between;
+    }
+}
+
+@media screen and (min-width : 1024px){
+    .feature-panel {
+        --max-width:31.25rem;
+    }
+
+    .feature-panel .title{
+        margin-bottom: 5.5rem;
+    }
+
+    
+    .feature-panel .description{
+        margin-bottom: 4.5rem;
+    }
+
+    .feature-panel .image{
+        --width:45rem;
+        --spacing:-4rem;
+    }
+
+    .feature-panel .characteristic-container{
+        align-items: center;
+        align-content: center;
+    }
+    
+}
+
+
+/*-------- CPU ---------*/
+
+.feature-panel.cpu{
+    background-image: linear-gradient(-135deg, #c6368a 0%, #679dc2 100%);
+}
+
+.feature-panel.cpu .subtitle .accent{
+    color: #C48CFC;
+}
+
+
+/*-------- GPU ---------*/
+
+.feature-panel.gpu .video{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: var(--z-negative);
+}
+
+
+@media screen and (min-width : 734px){
+    .feature-panel.gpu .grid{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+    }
+    
+    .feature-panel.gpu .content{
+        max-width: initial;
+    }
+
+    .feature-panel.gpu .characteristic-container{
+        gap: 0;
+        padding-top: 3rem;
+    }
+}
+
+@media screen and (min-width : 1024px){
+    .feature-panel.gpu .grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature-panel.gpu .subtitle{
+        font-size: 5rem;
+    }
+}

@@ -37,7 +37,7 @@
 }
 
 
-@media screen and (min-width : 734px){
+@media screen and (min-width : 834px){
     .main-header{
         border-bottom: var(--header-border) ;
     }
@@ -65,7 +65,7 @@
 
 /* ----------- Estilos Movil ----------*/
 
-@media screen and (max-width : 734px){
+@media screen and (max-width : 834px){
 
     .main-header{
         --transition-menu: 0.5s;
