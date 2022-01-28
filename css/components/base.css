@@ -103,3 +103,7 @@ a.arrow::after{
     display: flex;
     flex-direction: column;
 }
+
+.image-container{
+    position: relative;
+}

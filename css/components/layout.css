@@ -16,6 +16,9 @@
     width: 100%;
     max-width: 25rem; /*400 px*/
     margin-inline: auto;
+    justify-content: space-around
+    
+    /* background:red; */
 
 }
 
@@ -24,12 +27,19 @@
     transform: translateX(-50%) ;
 }
 
+.sub_grid{
+    display: grid;
+    gap: 2rem;
+}
+
 
 
 @media screen and (min-width : 360px){
     .grid-section{
         width:  calc(100% - 3rem);
     }
+    
+    
 }
 
 @media screen and (min-width : 734px){
@@ -41,10 +51,29 @@
     .grid-section{
         max-width: 87.5rem; /*1400 px*/
     }
+
+    .sub_grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
 }
 
 @media screen and (min-width : 1024px){
     .container{
         max-width: 61.25rem;
+    }
+
+    .sub_grid.desing_memory{
+        grid-template-columns: repeat(6,1fr);
+    }
+
+    .feature-panel.design{
+        grid-column: 1 / 5;
+    }
+
+    .feature-panel.memory{
+        grid-column: 5 / 7;
     }
 }

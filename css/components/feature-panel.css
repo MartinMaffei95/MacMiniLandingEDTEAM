@@ -17,7 +17,7 @@
 
 .feature-panel .subtitle{
     font-weight :var(--bold-font);
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1.25rem;
 }
 
@@ -36,10 +36,13 @@
 }
 
 .feature-panel .image{
-    --width: 90%;
+    --width: 120%;
+    left: 0rem;
+    bottom: -2rem;
     width: var(--width);
+    position: relative;
     display: block;
-    margin-left:auto ;
+    margin-left:auto;
 }
 
 
@@ -76,7 +79,37 @@
 }
 
 
+.feature-panel .background-container{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-negative);
+}
 
+.feature-panel .background-container .background{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* .feature-panel .apps-image{
+    margin-inline: auto;
+} */
+
+
+.sub_grid .feature-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.sub_grid .feature-panel .title , 
+.sub_grid .feature-panel .description{
+    font-size: 1.2rem;
+}
 
 @media screen and (min-width : 360px){
     .feature-panel{
@@ -118,10 +151,11 @@
     }
 
     .feature-panel .image{
+        width: 60%;
         --width: 32rem;
-        --spacing:4rem;
+        --spacing:0rem;
         position: absolute;
-        bottom: 0;
+        bottom: 2rem;
         left: calc(var(--width) + var(--spacing));
     }
 
@@ -143,6 +177,11 @@
     .feature-panel .characteristic-container{
         align-content: space-between;
     }
+
+    .sub_grid .feature-panel .title , 
+    .sub_grid .feature-panel .description{
+    margin-bottom: 1rem;
+}
 }
 
 @media screen and (min-width : 1024px){
@@ -160,8 +199,10 @@
     }
 
     .feature-panel .image{
+        width: 52%;
         --width:45rem;
-        --spacing:-4rem;
+        --spacing:-2rem;
+        bottom: -2rem;
     }
 
     .feature-panel .characteristic-container{
@@ -169,6 +210,14 @@
         align-content: center;
     }
     
+
+    .sub_grid .feature-panel{
+        display: flex;
+    }
+
+    .sub_grid .feature-panel .title{
+        margin-bottom: 1rem;
+    }
 }
 
 
@@ -185,7 +234,7 @@
 
 /*-------- GPU ---------*/
 
-.feature-panel.gpu .video{
+/* .feature-panel.gpu .video{
     position: absolute;
     left: 0;
     top:0;
@@ -193,7 +242,7 @@
     height: 100%;
     object-fit: cover;
     z-index: var(--z-negative);
-}
+} */
 
 
 @media screen and (min-width : 734px){
@@ -220,4 +269,336 @@
     .feature-panel.gpu .subtitle{
         font-size: 5rem;
     }
+
+    
+}
+
+
+/*-------- LEARNING ---------*/
+
+.feature-panel.learning{
+    background-image: linear-gradient(-10deg, #590a0d 0%,#10071c 100%);    
+}
+
+.feature-panel.learning .description{
+    color: #a1a1a6;
+}
+
+.feature-panel.learning .title{
+    margin-bottom: 4rem;
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    letter-spacing: 0.012em;
+}
+
+.feature-panel.learning .subtitle{
+    margin-bottom: 0rem;
+    font-family: var(--display-font);
+    font-weight: var(--semi-bold-font);
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    letter-spacing: 0.012em;
+}
+
+
+@media screen and (min-width : 734px){
+    
+
+    .feature-panel.learning{
+        background-image: linear-gradient(-135deg, #590a0d 0%,#10071c 100%);    
+    }
+
+    .feature-panel.learning .characteristic-container{
+       display: flex;
+    }
+
+    .feature-panel.learning .characteristic{
+        font-size: 1.05rem;
+        font-weight :var(--bold-font);
+    }
+
+    .feature-panel.learning .subtitle{
+        font-size: 1.5rem;
+    }
+
+    .feature-panel.learning .description{
+        font-size: 1.5rem;
+    }
+
+    /* .feature-panel.learning .number{
+        --size: 6rem;
+    } */
+
+    .feature-panel.learning .caption{
+        font-weight :var(--bold-font);
+        font-size: 1rem;
+    }
+}
+
+/*-------- OS ---------*/
+
+.feature-panel.big-sur .subtitle{
+    font-size: var(--normal-tittle-size);
+    line-height: 1.05;
+}
+
+
+/*-------- OS PANEL (Speed) ---------*/
+
+.second-line,
+.background-container{
+    transition: opacity .5s;
+}
+
+.feature-panel.speed .description{
+    margin-bottom: 3rem;
+}
+
+.feature-panel.speed .subtitle{
+    text-align: center;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-panel.speed .first-line{
+    margin-bottom: 0.75rem;
+}
+
+.feature-panel.speed :is(.second-line , .background-container){
+    opacity: 0.15;
+}
+
+.feature-panel.speed.is-active :is(.second-line , .background-container){
+    opacity: initial;
+}
+
+
+
+@media screen and (min-width : 1024px){
+
+    .feature-panel.speed .description{
+        margin-bottom: 6rem;
+    }
+
+    .feature-panel.speed .subtitle{
+        margin-inline: auto;
+        font-size: 80px;
+        
+    }
+
+
+}
+
+/*-------- OS PANEL (Apps) ---------*/
+
+
+
+
+.feature-panel.apps .apps-image{
+    margin-inline: auto;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+@media screen and (min-width : 734px){
+    .feature-panel.apps .apps-image{
+        padding: initial;
+        margin-top: 2rem;
+        width: 120%;
+        margin-left: -2rem;
+        
+    }
+}
+
+@media screen and (min-width : 1024px){
+    .feature-panel.apps .apps-image{
+        width: 80%;
+        margin-inline: auto;
+    }
+}
+
+/*-------- DESIGN PANEL ---------*/
+
+.feature-panel.design{
+    background:#151516;
+}
+
+.feature-panel.design .subtitle{
+    background: linear-gradient(-120deg, #f50581 0%, #f81337 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-position: 50% 100%;
+    background-size: 100% 200%;
+
+    margin-bottom: 0;
+}
+
+.feature-panel .lateral-bar{
+    width: 25%;
+}
+
+@media screen and (min-width : 734px){
+    
+
+    .feature-panel.design .subtitle{
+        font-size: 2.5rem;
+        margin-bottom: 0;
+        letter-spacing: 0.012em;
+    }
+
+    .feature-panel .lateral-bar{
+        width: 38%;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width : 1024px){
+    
+    .feature-panel.design{
+        align-items: flex-start;
+        letter-spacing: 0.009em;
+    }
+
+    .feature-panel.design .content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 100%;
+    }
+
+    .feature-panel .description_container{
+        margin-bottom: 6rem;
+        min-width: 80%;
+    }
+
+    .feature-panel .content .sub_flex{
+        display: flex;
+        align-items: flex-end;
+        gap: 2rem;
+        margin-left: 4rem;
+        min-width: 100%;
+    }
+
+    .feature-panel .sub_flex__centred{
+        display: flex;
+    }
+    .feature-panel .lateral-bar{
+        width: 130px; 
+    }
+
+    .feature-panel.design .title{
+        font-size: 1.2rem;
+    }
+    .feature-panel.design .subtitle{
+        font-size: 4rem;
+        min-width: 30rem;
+        max-width: 70%;
+        /* background: orangered; */
+    }
+    
+    .feature-panel.design .description{
+        font-size: 1.2rem;
+        max-width: 80%;
+    }
+    .feature-panel .video-container{
+        width: 20%;
+        flex-shrink: 1;
+
+    }
+}
+
+
+
+
+
+
+/*-------- MEMORY PANEL ---------*/
+
+.feature-panel.memory .title{
+    margin-bottom: 10rem;
+}
+
+.feature-panel.memory .description{
+    color:#a1a1a6;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: .015em;
+    margin-bottom: 10rem;
+}
+
+.feature-panel.memory .accent{
+    color:#ffffff;
+}
+
+
+.feature-panel .memory-icon{
+    margin-bottom: 1.2rem;
+}
+
+
+@media screen and (min-width : 734px){
+    .feature-panel.memory .title{
+        font-size: 1.25rem;
+    }
+
+    .feature-panel.memory .description{
+        font-size: 1.5rem;
+    }
+    
+}
+
+@media screen and (min-width : 1024px){
+    .feature-panel.memory .title{
+        font-size: 1.5rem;
+        margin-bottom: 4rem;
+    }
+    .feature-panel.memory .description{
+        font-size: 1.75rem;
+        margin-bottom: 3rem;
+    }
+
+    .feature-panel .memory-icon{
+        width: 15%;
+    }
+    
+}
+
+
+/*----- SSD -----*/
+
+.feature-panel.ssd{
+    background-image: linear-gradient(-135DEG,#A137BC 0%,#D83C48 100%);
+}
+
+.feature-panel.ssd .description{
+    margin-bottom: 1rem;
+}
+
+.feature-panel.ssd .image-container{
+    width: 32rem;
+    height: 27rem;
+}
+
+.feature-panel.ssd .image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0.5rem;
+    
+}
+
+@media screen and (min-width : 734px){
+
+}
+
+@media screen and (min-width : 1024px){
+    .feature-panel.ssd .image-container{
+        width: 44rem;
+        height: 38rem;
+        bottom: -1rem;
+        left: 1rem;
+    }
+
 }
