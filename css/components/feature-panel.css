@@ -582,14 +582,21 @@
 }
 
 .feature-panel.ssd .image{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0.5rem;
+    width   :   100%;
+    height  :   100%;
+    position:   absolute;
+    left    :   5rem;
     
 }
 
 @media screen and (min-width : 734px){
+
+    .feature-panel.ssd .image-container{
+        /* width: 44rem; */
+        /* height: 38rem; */
+        bottom: -5rem;
+        /* left: 1rem; */
+    }
 
 }
 
@@ -602,3 +609,44 @@
     }
 
 }
+
+/* SECURITY */
+
+.feature-panel.security{
+    background-color: var(--bg-color-alt);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-panel.security .message{
+    margin-bottom: 2rem;
+    font-size: var(--small-tittle-size);
+    color: var(--text-color-alt);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.feature-panel.security .padlock{
+    margin-inline: auto ;
+    margin-bottom: 2rem;
+    width: 6.25rem;
+    height: 8rem;
+    background-image: url('/media/img/padlock-sprite.png');
+    background-size: 800px 1152px;
+    background-repeat: no-repeat;
+
+    /*ANIMATION*/
+    animation: unlock-animation 0s steps(1) forwards;
+    animation-play-state: paused;
+    animation-iteration-count:initial;
+    animation-duration: 72s;
+    background-position: 0 0;
+}
+
+.feature-panel.security .button{
+    margin-inline:auto;
+    margin-bottom: var(--padding);
+}
+
+

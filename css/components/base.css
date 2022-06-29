@@ -48,6 +48,7 @@ body{
     color:var(--text-color);
     font-family: var(--body-font);
     background-color: var(--body-bg);
+    scroll-behavior:smooth;
     /* overflow: hidden; */
     /* padding-bottom: calc(var(--header-height) + 3rem) */
 }
@@ -88,6 +89,9 @@ a.arrow::after{
     font-family: 'icomoon' !important;
 }
 
+img{
+    max-width: 100%;
+}
 
 .black-background{
     background-color: var(--bg-color);
