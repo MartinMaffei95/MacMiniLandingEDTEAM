@@ -38,7 +38,7 @@
     .grid-section{
         width:  calc(100% - 3rem);
     }
-    
+  
     
 }
 
@@ -56,6 +56,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
+
     }
 
 }
@@ -64,16 +65,16 @@
     .container{
         max-width: 61.25rem;
     }
-
-    .sub_grid.desing_memory{
+    .sub_grid.three_columns{
         grid-template-columns: repeat(6,1fr);
     }
 
-    .feature-panel.design{
+    .feature-panel.column_one_five{
         grid-column: 1 / 5;
     }
 
-    .feature-panel.memory{
+    .feature-panel.column_five_seven{
         grid-column: 5 / 7;
     }
+   
 }

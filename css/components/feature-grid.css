@@ -1,0 +1,38 @@
+.feature-grid{
+    background-color: var(--bg-color-alt);
+}
+
+.feature-grid .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-block: 4rem;
+    gap: 1rem;
+}
+
+.feature-grid .feature-item{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    max-width: 12rem;
+    text-align: center;
+}
+
+
+.feature-item .title{
+    margin-bottom: 0.5rem;
+}
+
+.feature-item .icon{
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-item .description{
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.feature-item :is(.description, .link){
+   font-size: 0.875rem;
+}
